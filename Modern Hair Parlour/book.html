@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="google-site-verification" content="i7I-OGIkQcOdg36kbkifX_aVL1t1dDvXupg9bNbpGJc" />
+    <meta charset="UTF-8">
+    <title>Scissor Point order</title>
+    <link href='images/logo1.jpeg' rel='icon' type='image/x-icon' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- library validate -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
+    <!-- style css -->
+    <link rel="stylesheet" href="book.css">
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <div class="row">
+        <div class="col-75">
+            <div class="container">
+                <form id="validate" data-netlify="true" method="POST">
+                    <div class="row">
+                        <div class="col-50">
+
+                            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                            <input type="text" id="fname" name="fullname" placeholder="Your full name here" required>
+
+                            <label for="no"><i class="fa fa-phone"></i> Contact Number</label>
+                            <input type="tel" id="no" name="no" placeholder="Your phone no. here" required
+                                minlength="10" maxlength="10">
+                            
+                                <label for="birthdaytime" name="datetime">Select (date and time):</label>
+                                <input type="datetime-local" id="datetime" name="daytime" required>
+                                
+
+                            <div class="row">
+                                <div class="col-50">
+                                    <label for="product"><i class="fa fa-shopping-basket"></i>Select Services</label>
+                                    <div class="custom_select">
+                                        <select name="selectp" id="product" required>
+                                            <option value="">Select</option>
+                                            <option id="milk">Hair styling</option>
+                                            <option id="">Beard Trim</option>
+                                            <option id="">Hair Cut</option>
+                                            <option id="">Dry Shampoo</option>
+                                            <option id="">Waxing</option>
+                                            <option id="">Massage</option>
+                                            <option id="">Facial</option>
+                                            <option id="">Hair colour</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn" name="save" id="submit">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- script validate js -->
+    <script>
+        $('#validate').validate({
+            roles: {
+                fullname: {
+                    required: true,
+                },
+                email: {
+                    required: true,
+                },
+                address: {
+                    required: true,
+                },
+                no: {
+                    required: true,
+                },
+                zip: {
+                    required: true,
+                },
+                qty: {
+                    required: true,
+                },
+                selectp: {
+                    required: true,
+                },
+                datetime: {
+                    required:true,
+                },
+
+            },
+            messages: {
+                fullname: "Please enter full name*",
+                email: "Please enter email*",
+                no: "Please enter Contact No*",
+                address: "Please enter address*",
+                zip: "Please enter pin code*",
+                qty: "Please enter product quantity",
+                selectp: "Please select product",
+                
+                datetime: "Please Select Date And Time*"
+            },
+        });
+    </script>
+
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load", function () {
+            loader.style.display = "none";
+        })
+    </script>
+    <footer>
+        <span>Developed By <a href="https://www.linkedin.com/in/ankit-dwivedi-63b6021a4/?originalSubdomain=in"
+                target="blank">Ankit_Dwivedi</a> | <span class="far fa-copyright"></span> 2022 All
+            rights
+            reserved.</span>
+    </footer>
+
+</body>
+
+</html>
